@@ -1,0 +1,21 @@
+[user]
+	name = Andrew Rowls
+	email = andrew@eternicode.com
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+
+[merge]
+	conflictstyle = diff3
+
+[alias]
+#	clog = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit
+#@  changeset:   295:18b38e3c3670 {tip} (master) [] Andrew Rowls <andrew@eternicode.com> 2012-12-26 22:14 -0500
+#|  summary:     Remove mention of specific locales from readme
+
+	clog = log --color --graph --pretty=format:'changeset:   %h%d %an <%ae> %ci%nsummary:     %s%n' --no-color --all
+
+    # Generate patch made by specific commit
+    patch = format-patch -1 -p --stdout
