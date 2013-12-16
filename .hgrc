@@ -17,7 +17,7 @@ detail = log -l1 --template '\nchangeset:   {rev}:{node|short}\ntags:        {ta
 # MQ utils
 qclog = clog -r tip:qparent
 qst = st --change qtip
-qser=!curr=`hg qtop`; hg qseries | ( while read i; do [ $i = $curr ] && i="> $i" || i="  $i"; echo "$i"; done;) | nl -v0;
+qser=!curr=`hg qtop`; hg qseries | ( while read i; do [ "$i" = "$curr" ] && i="> $i" || i="  $i"; echo "$i"; done;) | nl -v0;
 
 
 [extensions]
