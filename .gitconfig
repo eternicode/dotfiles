@@ -1,19 +1,18 @@
-
 [user]
-	name = Andrew Rowls
-	email = andrew@eternicode.com
+    name = Andrew Rowls
+    email = andrew@eternicode.com
 
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+    diff = auto
+    status = auto
+    branch = auto
 
 [merge]
-	conflictstyle = diff3
+    conflictstyle = diff3
 
 [alias]
-	# A bash function, instead of a simple bash alias, because apparently git can't handle $@ properly -_-'
-	clog = "!_(){ git log --color --graph --pretty=format:'changeset:   %h%d %an <%ae> %ci%nsummary:     %s%n' --no-color --all $@ | sed 's#^\\([/\\\\| ]*\\)\\*#\\1o#'; }; _"
+    # A bash function, instead of a simple bash alias, because apparently git can't handle $@ properly -_-'
+    clog = "!_(){ git log --color --graph --pretty=format:'changeset:   %h%d %an <%ae> %ci%nsummary:     %s%n' --no-color --all $@ | sed 's#^\\([/\\\\| ]*\\)\\*#\\1o#'; }; _"
 #@  changeset:   295:18b38e3c3670 {tip} (master) [] Andrew Rowls <andrew@eternicode.com> 2012-12-26 22:14 -0500
 #|  summary:     Remove mention of specific locales from readme
 
