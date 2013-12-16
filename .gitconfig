@@ -18,3 +18,8 @@
 
     # Generate patch made by specific commit
     patch = format-patch -1 -p --stdout
+
+    # Short commands
+    ci = commit
+    st = status
+    di = diff
