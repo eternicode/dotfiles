@@ -10,6 +10,3 @@ alias n=nano
 alias pyhton=python
 
 alias cless="colordiff | less -R"
-
-### HG
-alias qser='curr=`hg qtop`; hg qser | ( while read i; do [[ $i == $curr ]] && i="> $i" || i="  $i"; echo "$i"; done;) | nl -v0'
