@@ -21,6 +21,7 @@ qser=!curr=`hg qtop`; hg qseries | ( while read i; do [ "$i" = "$curr" ] && i=">
 
 
 [extensions]
+rebase =
 bookmarks =
 hggit =
 graphlog =
