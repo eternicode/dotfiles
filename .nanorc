@@ -4,3 +4,7 @@ set smarthome
 set smooth
 set tabsize 4
 set tabstospaces
+
+## Alternative bindings
+bind ^F whereis main
+bind ^G gotoline main
