@@ -11,8 +11,8 @@ kdiff3.args = $base $local $other -o $output
 
 [alias]
 # listings
-clog = glog --template 'changeset:   {rev}:{node|short} \{{tags}} ({bookmarks}) [{branches}] {author} {date|isodate}\nsummary:     {desc|firstline|fill68|tabindent|tabindent}\n\n'
-detail = log -l1 --template '\nchangeset:   {rev}:{node|short}\ntags:        {tags}\nbookmarks:   {bookmarks}\nbranches:    {branches}\nauthor:      {author}\ndate:        {date|isodate}\n--\n{desc}\n--\n\n'
+clog = glog --template 'changeset:   {rev} {node|short} \{{tags}} ({bookmarks}) [{branches}] {author} {date|isodate}\nsummary:     {desc|firstline|fill68|tabindent|tabindent}\n\n'
+detail = log -l1 --template '\nchangeset:   {rev} {node|short}\ntags:        {tags}\nbookmarks:   {bookmarks}\nbranches:    {branches}\nauthor:      {author}\ndate:        {date|isodate}\n--\n{desc}\n--\n\n'
 
 # MQ utils
 qclog = clog -r tip:qparent
