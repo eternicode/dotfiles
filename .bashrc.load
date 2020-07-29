@@ -23,16 +23,17 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 ### Node
 export PATH=$PATH:~/.node_modules/bin/
 
-if [ ! -z "$SCREEN_VIRTUAL_ENV" ]; then
-  workon `basename $SCREEN_VIRTUAL_ENV`
-fi
-
-function _ps1_context {
-    if [ ! -z "$VIRTUAL_ENV" ]; then
-        echo "[$(basename $VIRTUAL_ENV)]"
-    fi
+### Virtualenv
+_ps1_context() {
+    # If we're in a virtualenv and the PS1 has been reset...
+    if [ ! -z "$VIRTUAL_ENV" ] && [[ "$PS1" != *"$(basename $VIRTUAL_ENV)"* ]]; then
+        echo -n "[$(basename $VIRTUAL_ENV)] ";
+    fi;
 }
 
-#PS1="\[\e]0;$(_ps1_context)\u@\h: \w\a\]$PS1"
-PS1="\[\e]0;\u@\h: \w\a\]$PS1"
+if [ ! -z $SCREEN_VIRTUAL_ENV ]; then
+    cd $SCREEN_VIRTUAL_ENV_DIR;
+fi
+
+export PROMPT_COMMAND='_ps1_context'
 

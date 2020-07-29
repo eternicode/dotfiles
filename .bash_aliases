@@ -10,3 +10,7 @@ alias n=nano
 alias pyhton=python
 
 alias cless="colordiff | less -R"
+
+function lgrep() {
+    grep --color=always -RIn -C3 "$@" | less -R
+}

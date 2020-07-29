@@ -12,12 +12,18 @@
 
 [alias]
     # A bash function, instead of a simple bash alias, because apparently git can't handle $@ properly -_-'
-    clog = "!_(){ git log --color --graph --pretty=format:'changeset:   %h%d %an <%ae> %ci%nsummary:     %s%n' --no-color --all $@ | sed 's#^\\([/\\\\| ]*\\)\\*#\\1o#'; }; _"
+    clog = "!_(){ git log --no-color --graph --pretty=format:'changeset:   %h%d %an <%ae> %ci%nsummary:     %s%n' $@ | sed 's#^\\([/\\\\| ]*\\)\\*#\\1o#'; }; _"
 #@  changeset:   295:18b38e3c3670 {tip} (master) [] Andrew Rowls <andrew@eternicode.com> 2012-12-26 22:14 -0500
 #|  summary:     Remove mention of specific locales from readme
 
+    # statlog of specific commit
+    summary = "!_(){ git log --stat -1 $1~ $1; }; _"
+
     # Generate patch made by specific commit
     patch = format-patch -1 -p --stdout
+
+    # unstage file
+    forget = reset HEAD
 
     # Short commands
     ci = commit
